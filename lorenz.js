@@ -20,7 +20,7 @@ function draw() {
 
   // Update and draw points
   for (var i = 0; i < points.length; i++) {
-    updatePoint(points[i], 0.001);
+    updatePoint(points[i], 0.01);
     drawPoint(points[i]);
   }
 }
