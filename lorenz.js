@@ -1,6 +1,7 @@
 var points = [];
 var sigma = 10, rho = 28, beta = 8/3;
 
+var scaler = 8;
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
 
@@ -42,7 +43,7 @@ function updatePoint(point, dt) {
 
 function drawPoint(point) {
   push();
-  translate(point.position.x*10, point.position.y*10, point.position.z*10);
+  translate(point.position.x* scaler, point.position.y* scaler, point.position.z* scaler);
   fill(255);
   noStroke();
   sphere(1); // Draw a sphere at the point's location
@@ -52,7 +53,7 @@ function drawPoint(point) {
     var pos = point.trail[i];
     var alpha = map(i, 0, point.trail.length, 0, 255);
     push();
-    translate(pos.x*10, pos.y*10, pos.z*10);
+    translate(pos.x* scaler, pos.y* scaler, pos.z* scaler);
     fill(255, alpha);
     noStroke();
     sphere(0.5); // Draw a smaller, semi-transparent sphere at each previous position
